@@ -56,7 +56,7 @@ public abstract class Person implements Comparable<Object> {
     @Override
     public String toString() {
         return " [id=" + id + ", Surname=" + surname + ", Name=" + name + ", Patronymic=" + patronymic
-                + ", DOB=" + dob + ", Address=" + address + ", Phone=" + phone;
+                + ", DOB=" + dob + ", Address=" + address + ", Phone=" + phone+",";
     }
     @Override
     public int compareTo(Object o) {
