@@ -1,4 +1,4 @@
-package com.epam.javaclasses;
+package com.epam.classes;
 
 import java.time.temporal.ValueRange;
 import java.util.*;

@@ -1,4 +1,4 @@
-package com.epam.javafundamental;
+package com.epam.fundamental;
 import java.util.*;
 public class OptionalTask1 {
 

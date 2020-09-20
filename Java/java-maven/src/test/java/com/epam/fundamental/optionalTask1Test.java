@@ -1,4 +1,4 @@
-package com.epam.javafundamental;
+package com.epam.fundamental;
 
 import org.junit.jupiter.api.Test;
 

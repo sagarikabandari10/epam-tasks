@@ -1,4 +1,4 @@
-package com.epam.javafundamental;
+package com.epam.fundamental;
 
 import static org.junit.jupiter.api.Assertions.*;
 
