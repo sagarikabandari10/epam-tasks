@@ -1,19 +1,21 @@
 package com.epam.collections.main.flowergirl;
 
-import java.io.File;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Run {
-    public static void main(String[] args) {
-        List<Color> colors = new ArrayList<>();
+    private static List<Color> colors = new ArrayList<>();
+
+    private static void SetDefaultData() {
         colors.add(new Red(10, Color.FreshnessLevel.Middle));
         colors.add(new Yellow(7, Color.FreshnessLevel.Middle));
         colors.add(new White(6,Color.FreshnessLevel.Old));
-        Bouquet bouquet = new Bouquet("Designer", colors, Bouquet.Wrapper.PolyDecore, Bouquet.CARD.Birthday, Bouquet.TYPE.Fancy,
-                Bouquet.DOLL.Bunny);
+    }
+
+    public static void main(String[] args) {
+        SetDefaultData();
+        Bouquet bouquet = new Bouquet("Designer", colors, Bouquet.Wrapper.PolyDecore,
+                Bouquet.CARD.Birthday, Bouquet.TYPE.Fancy, Bouquet.DOLL.Bunny);
         System.out.println(bouquet);
     }
 }
