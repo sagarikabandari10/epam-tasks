@@ -35,7 +35,7 @@ public abstract class Color implements Comparable <Color>{
         costByFreshness(_cost, fresh); // set cost value based on freshness.
     }
 
-    public double costByFreshness(double _cost, Color.FreshnessLevel fresh){
+    private double costByFreshness(double _cost, Color.FreshnessLevel fresh){
         switch (fresh) {
             case Middle:
                 cost=_cost-1;
