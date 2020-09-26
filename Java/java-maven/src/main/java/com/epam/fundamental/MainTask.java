@@ -20,7 +20,7 @@ public class MainTask {
             }
             stringReverse.append(" ");
         }
-        return stringReverse.toString();//or we can use reverse() method
+        return stringReverse.toString().trim();//or we can use reverse() method
     }
 
     public static int[] RandomNumbers(int count) {
