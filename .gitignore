@@ -1,2 +1,7 @@
 *.log
 *.db
+.idea
+.classpath
+.project
+.settings/
+target/
