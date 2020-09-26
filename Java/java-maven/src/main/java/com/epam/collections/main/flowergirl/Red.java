@@ -7,9 +7,19 @@ public class Red extends Color{
     }
 
     @Override
+    public void setFlowerName() {
+        setName(getRandomFlower(new String[]{"Rose", "Anemone", "Chrysanthemum"}));
+    }
+
+    @Override
+    public void setFlowerCost() {
+        setCost(costByFreshness(COLORS.Red.value));
+    }
+
+    @Override
     public String toString() {
-        Flower flower = new Flower(Flower.COLORS.Red);//randomly generates flower name.
-        setCost(Flower.COLORS.Red.value);//set cost by calling costByFreshness method.
-        return (flower.getName()+"("+ Flower.COLORS.Red+"): "+getCost()+ "$"+ super.toString());
+        setFlowerName();
+        setFlowerCost();
+        return (getName()+"("+ COLORS.Red +"): "+getCost()+ "$"+ super.toString());
     }
 }

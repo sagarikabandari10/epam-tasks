@@ -7,15 +7,15 @@ public class Bouquet {
     private List<Color> colors;
     private Wrapper wrap;
     private CARD card;
-    private TYPE type;
+    private Design design;
     private DOLL doll;
 
-    public Bouquet(String _name, List<Color> _colors, Wrapper _wrap, CARD _card, TYPE _bouType, DOLL _doll){
+    public Bouquet(String _name, List<Color> _colors, Wrapper _wrap, CARD _card, Design _bouDesign, DOLL _doll){
         this.name = _name;
         this.colors = _colors;
         this.wrap = _wrap;
         this.card = _card;
-        this.type = _bouType;
+        this.design = _bouDesign;
         this.doll = _doll;
     }
 
@@ -64,12 +64,12 @@ public class Bouquet {
         }
     }
 
-    public enum TYPE {
+    public enum Design {
         Classic(1.8), Fancy(2.5), Normal(1);
 
         private double value;
 
-        TYPE(double d) {
+        Design(double d) {
             this.value = d;
         }
 
@@ -101,11 +101,11 @@ public class Bouquet {
             s.append(c.toString()+"\n"); // calls toString() method based on color.
             cost += c.getCost(); // cost of each flower.
         }
-        cost += this.wrap.value + this.card.value + this.type.value + this.doll.value;// flower cost + accessories.
+        cost += this.wrap.value + this.card.value + this.design.value + this.doll.value;// flower cost + accessories.
         s.append("\nAccessories: ");
         s.append("Wrapper - " + this.wrap + "(" + this.wrap.value + "$)");
         s.append(", Card - " + this.card + "(" + this.card.value + "$)");
-        s.append(", Type - " + this.type + "(" + this.type.value + "$)");
+        s.append(", Type - " + this.design + "(" + this.design.value + "$)");
         s.append(", Doll - " + this.doll + "(" + this.doll.value + "$)");
         s.append("\nTotal Cost for Bouquet: %s$");
         return String.format(s.toString(), cost);

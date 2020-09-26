@@ -24,7 +24,7 @@ public class Student extends Person {
     }
 
     //constructor
-    private Student(int _id, String _Surname, String _Name, String _Patronymic, String _DOB, String _Address, long _Phone,
+    public Student(int _id, String _Surname, String _Name, String _Patronymic, String _DOB, String _Address, long _Phone,
                     String _faculty, String _course, String _group) {
         super(_id, _Surname, _Name, _Patronymic, _DOB, _Address, _Phone);
         this.faculty = _faculty;
@@ -47,28 +47,26 @@ public class Student extends Person {
     }
 
     //properties
-    public String getGroup() {
-        return group;
-    }
+//    public String getGroup() {
+//        return group;
+//    }
 
-    public String getCourse() {
-        return course;
-    }
+    //public String getCourse() { return course;}
 
-    public String getFaculty() {
-        return faculty;
-    }
+//    public String getFaculty() {
+//        return faculty;
+//    }
 
     @Override
     public String toString() {
-        return "Student " + super.toString() + " Faculty=" + faculty
+        return super.toString() + " Faculty=" + faculty
                 + ", Course=" + course + ", Group=" + group + "]";
     }
 
     public static void main(String[] args) {
         List<Student> studentList = getStudents();
         System.out.println("List of students of a given faculty: ");
-        Map<String, List<Student>> map = studentList.stream().collect(Collectors.groupingBy(Student::getFaculty));
+        Map<String, List<Student>> map = studentList.stream().collect(Collectors.groupingBy(p -> p.faculty));
         map.forEach((key, value) -> System.out.println(key + " : " + value));
 
         System.out.println("\nLists of students for each faculty and course: ");
@@ -91,17 +89,14 @@ public class Student extends Person {
 
         int year = 1985;
         System.out.println("\nList of students born after a given year: " + year);
-        //Map<Integer, List<Student>> map1 =
-                studentList.stream()
+        studentList.stream()
                 .filter(p -> p.getDob().getYear() > year)
-                //.collect(Collectors.groupingBy(Student::get_Year));
-        .forEach(s1 -> System.out.print(s1.get_Year()+" : "+s1 +"\n"));
-        //map1.forEach((key, value) -> System.out.println(key + ":" + value));
+                .forEach(s1 -> System.out.print(s1.get_Year()+" : "+s1 +"\n"));
 
         System.out.println("\nList of the study group:");
-        Collections.sort(studentList);
+        //Collections.sort(studentList);
         map = studentList.stream()
-                        .collect(Collectors.groupingBy(p -> p.getGroup()));
+                        .collect(Collectors.groupingBy(p -> p.group));
         map.forEach((key, value) -> System.out.println(key + ":" + value));
 
     }// end of main

@@ -5,7 +5,7 @@ import java.util.*;
 
 public class Customer extends Person
 {
-    private int creditCardNumber;
+    private long creditCardNumber;
     private long bankAccountNumber;
 
     public Customer(int _id, String _Surname, String _Name, String _Patronymic, String _DOB, String _Address, long _Phone,
@@ -15,7 +15,7 @@ public class Customer extends Person
         this.bankAccountNumber = bankAccountNumber;
     }
 
-    protected int getCreditCardNumber() {
+    protected long getCreditCardNumber() {
         return creditCardNumber;
     }
 
@@ -47,7 +47,7 @@ public class Customer extends Person
         Collections.sort(customers);
         customers.forEach(c -> System.out.print(c.getName()+" : "+c +"\n"));
 
-        long minRange = 5000, maxRange=2600000;
+        long minRange = 6000, maxRange=2600000;
         System.out.println(String.format("\nList of customers whose credit card number in %d - %d range:", minRange, maxRange));
         for(Customer customer : customers) {
             if(ValueRange.of(minRange, maxRange).isValidIntValue(customer.creditCardNumber)) {

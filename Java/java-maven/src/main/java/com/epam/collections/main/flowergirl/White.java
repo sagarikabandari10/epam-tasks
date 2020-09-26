@@ -6,9 +6,19 @@ public class White extends Color {
     }
 
     @Override
+    public void setFlowerName() {
+        setName(getRandomFlower(new String[] { "Camellia", "Daffodil", "Daisy" }));
+    }
+
+    @Override
+    public void setFlowerCost() {
+        setCost(costByFreshness(COLORS.White.value));
+    }
+
+    @Override
     public String toString() {
-        Flower flower = new Flower(Flower.COLORS.White);
-        setCost(Flower.COLORS.White.value);
-        return (flower.getName() + "("+ Flower.COLORS.White+"):"+getCost()+"$"+super.toString());
+        setFlowerName();
+        setFlowerCost();
+        return (getName()+"("+ COLORS.White +"): "+getCost()+ "$"+ super.toString());
     }
 }

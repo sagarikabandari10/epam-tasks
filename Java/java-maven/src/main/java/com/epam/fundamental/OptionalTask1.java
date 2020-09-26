@@ -4,7 +4,7 @@ public class OptionalTask1 {
 
     public static boolean checkEvenCode(String str) {
         for (int i = 0; i < str.length(); i++) {
-            //System.out.println(str.charAt(i)+"-"+(int)str.charAt(i));
+            System.out.println(str.charAt(i)+"-"+(int)str.charAt(i));
             for (int j = i + 1; j < str.length(); j++) {
                 if ((int) str.charAt(i) > (int) str.charAt(j)) {
                     return false;
@@ -50,7 +50,7 @@ public class OptionalTask1 {
 
         //2. Arrange and print strings in ascending (descending) order of their lengths
 
-        String[] strings = new String[]{"Let", "always", "willbe", "sun", "bat"};
+        String[] strings = new String[]{"let", "always", "willbe", "sun", "moon","stars"};
         Arrays.sort(strings, (a, b) -> a.length() - b.length());
         System.out.println("Sorted Array ascending order by lengths = " + Arrays.toString(strings));
         Arrays.sort(strings, (a, b) -> b.length() - a.length());
@@ -61,12 +61,12 @@ public class OptionalTask1 {
 
         //3. Print to the console those numbers whose length is less (more) than the average length for all numbers , as well as the length.
         System.out.println();
-        int sum, avg;
-        sum = 0;
+        int sum=0, avg;
         for (String i : strings) {
-            sum += i.length();
+            sum += i.length();//3+6+6+3+4+5
         }
         avg = sum / strings.length;
+        System.out.println("Array Sum = " + sum);
         System.out.println("Array avg = " + avg);
         System.out.println("Array length = " + strings.length);
         System.out.println("Print array avg > values : ");
@@ -76,7 +76,7 @@ public class OptionalTask1 {
 //            else
 //                System.out.print("Lesser value"+i + "-" + i.length() + " ");
         }
-//       output: always-6 willbe-6
+//       output: always-6 willbe-6 stars-5
 
         //6 .Find a number with digits in strict ascending order. If there are several such numbers, find the first one.
 

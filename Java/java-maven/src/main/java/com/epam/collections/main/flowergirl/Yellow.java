@@ -6,9 +6,19 @@ public class Yellow extends Color {
     }
 
     @Override
+    public void setFlowerName() {
+        setName(getRandomFlower(new String[] { "Sunflower", "Yarrow", "Hibiscus", "Carnation" }));
+    }
+
+    @Override
+    public void setFlowerCost() {
+        setCost(costByFreshness(COLORS.Yellow.value));
+    }
+
+    @Override
     public String toString() {
-        Flower flower = new Flower(Flower.COLORS.Yellow);
-        setCost(Flower.COLORS.Yellow.value);
-        return (flower.getName() + "("+ Flower.COLORS.Yellow+"):"+getCost()+"$"+super.toString());
+        setFlowerName();
+        setFlowerCost();
+        return (getName()+"("+ COLORS.Yellow +"): "+getCost()+ "$"+ super.toString());
     }
 }

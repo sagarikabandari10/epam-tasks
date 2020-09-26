@@ -7,27 +7,27 @@ import java.util.Random;
 public class MainTask {
     //methods
     public static String GreetingUser(String name) {
-        return ("Welcome " + name);
+        return String.format("Welcome %s", name);
     }
 
     public static String Reverse(String[] args) {
-        StringBuilder stringReverse = new StringBuilder();
+        StringBuilder stringReverse = new StringBuilder();//StringBuilder are mutable classes. StringBuffer is thread-safe and synchronized whereas StringBuilder is not. That’s why StringBuilder is faster than StringBuffer.
         if (args.length == 0) args = new String[]{"Sag", "Ravi"};
         System.out.println(Arrays.asList(args));
-        for (int i = args.length - 1; i >= 0; i--) {
-            for (int j = args[i].length() - 1; j >= 0; j--) {
+        for (int i = args.length - 1; i >= 0; i--) {//{"Sag", "Ravi"}; args.length=2
+            for (int j = args[i].length() - 1; j >= 0; j--) {//args[0].length()=3; args[1].length()=4
                 stringReverse.append(args[i].charAt(j));
             }
             stringReverse.append(" ");
         }
-        return stringReverse.toString().trim();
+        return stringReverse.toString();//or we can use reverse() method
     }
 
     public static int[] RandomNumbers(int count) {
-        Random objGenerator = new Random();
+        Random random = new Random();
         int[] randomList = new int[count];
         for (int i = 0; i < count; i++) {
-            randomList[i] = objGenerator.nextInt(10);
+            randomList[i] = random.nextInt(10);
         }
         return randomList;
     }
@@ -64,7 +64,6 @@ public class MainTask {
                 break;
             case 10:
                 MonthOfName = "October";
-                ;
                 break;
             case 11:
                 MonthOfName = "November";
@@ -108,19 +107,20 @@ public class MainTask {
 
     public static void main(String[] args) {
         System.out.println("Java Fundamentals Main Programs.");
-
+        // Greet any user when entering their name through the command line.
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Name: ");
-        String name = scanner.nextLine();
+        String name = scanner.nextLine();//(next)It read till the space.	(nextLine)It read till the line change-\n or press enter.
         System.out.println(GreetingUser(name));
         System.out.println();
 
+    //2.     Display command line arguments in reverse order in a console window.
         System.out.println(Reverse(args));
         /*output:
         [Sagarika, Ravi, 20, 30, Prateek, 5]
         5 keetarP 03 02 ivaR akiragaS*/
 
-        //  Print a given number of random numbers with and without a jump to a new line
+        //3.  Print a given number of random numbers with and without a jump to a new line
         System.out.println("\nPrint random numbers");
         int[] res = RandomNumbers(5);
         for (int i : res) {
@@ -136,8 +136,8 @@ public class MainTask {
         // Enter a number from 1 to 12. Output to the console the name of the month corresponding to the given date. Check the correctness of entering numbers.
 
         int monthNumber;
-        System.out.print("Enter month's number: ");
-        while (!scanner.hasNextInt()) {
+        System.out.print("\nEnter month's number: ");
+        while (!scanner.hasNextInt()) {//verify given value is int.
             System.out.println("Please enter valid number: ");
             scanner.next(); // this is important as it allows to enter again.
         }

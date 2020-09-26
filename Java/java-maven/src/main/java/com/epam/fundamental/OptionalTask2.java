@@ -41,10 +41,10 @@ public class OptionalTask2 {
 
     public static int getMaxValue(int[][] numbers) {
         int maxValue = numbers[0][0];
-        for (int j = 0; j < numbers.length; j++) {
-            for (int i = 0; i < numbers[j].length; i++) {
-                if (numbers[j][i] > maxValue) {
-                    maxValue = numbers[j][i];
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers[0].length; j++) {
+                if (numbers[i][j] > maxValue) {
+                    maxValue = numbers[i][j];
                 }
             }
         }
@@ -52,10 +52,10 @@ public class OptionalTask2 {
     }
 
     public static int[][] replaceValue(int[][] numbers, int value, int newValue) {
-        for (int j = 0; j < numbers.length; j++) {
-            for (int i = 0; i < numbers[j].length; i++) {
-                if (numbers[j][i] == value) {
-                    numbers[j][i] = newValue;
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers[0].length; j++) {
+                if (numbers[i][j] == value) {
+                    numbers[i][j] = newValue;
                 }
             }
         }
@@ -64,7 +64,7 @@ public class OptionalTask2 {
 
     public static void main(String[] args) {
         //Create multi dimension array and print.
-        int rows=3, columns=3, bound=10, col = 2, newValue=0;
+        int rows=3, columns=3, bound=20, col = 2, newValue=0;
         int[][] matrix = createMatrix(rows,columns, bound);
         printMatrix(matrix);
 

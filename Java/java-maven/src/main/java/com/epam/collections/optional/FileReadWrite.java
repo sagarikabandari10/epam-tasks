@@ -28,8 +28,8 @@ public class FileReadWrite {
     }
 
     private static String getFilePath() {
-        Path root = FileSystems.getDefault().getPath("").toAbsolutePath();
-        Path filePath = Paths.get(root.toString(),"src", "main", "resources", fileName);
+        Path root = FileSystems.getDefault().getPath("").toAbsolutePath();//returns root path C:\Sagarika\Git\epam-tasks\Java\java-maven
+        Path filePath = Paths.get(root.toString(),"src", "main", "resources", fileName);//adding root path with file location
         return String.valueOf(filePath);
     }
 
