@@ -19,6 +19,7 @@ public class MainTask {
                 stringReverse.append(args[i].charAt(j));
             }
             stringReverse.append(" ");
+
         }
         return stringReverse.toString().trim();//or we can use reverse() method
     }
@@ -110,7 +111,7 @@ public class MainTask {
         // Greet any user when entering their name through the command line.
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter Name: ");
-        String name = scanner.nextLine();//(next)It read till the space.	(nextLine)It read till the line change-\n or press enter.
+        String name = scanner.nextLine();//(next)It read till the space.(nextLine)It read till the line change-\n or press enter.
         System.out.println(GreetingUser(name));
         System.out.println();
 

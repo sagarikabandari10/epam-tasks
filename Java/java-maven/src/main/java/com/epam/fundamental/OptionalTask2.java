@@ -15,19 +15,6 @@ public class OptionalTask2 {
         return mat;
     }
 
-    public static void sortColumn(int array[][], int e) {
-        for (int i = 0; i < array.length; i++)
-            for (int k = i + 1; k < array[0].length; k++) {
-                if (array[i][e] > array[k][e]) {
-                    for (int j = 0; j < array[0].length; j++) {
-                        int temp = array[i][j];
-                        array[i][j] = array[k][j];
-                        array[k][j] = temp;
-                    }
-                }
-            }
-    }
-
     private static void printMatrix(int[][] matrix) {
         for(int i = 0; i< matrix.length; i++)
         {
@@ -49,6 +36,19 @@ public class OptionalTask2 {
             }
         }
         return maxValue;
+    }
+
+    public static void sortColumn(int array[][], int e) {
+        for (int i = 0; i < array.length; i++)
+            for (int k = i + 1; k < array[0].length; k++) {
+                if (array[i][e] > array[k][e]) {
+                    for (int j = 0; j < array[0].length; j++) {
+                        int temp = array[i][j];
+                        array[i][j] = array[k][j];
+                        array[k][j] = temp;
+                    }
+                }
+            }
     }
 
     public static int[][] replaceValue(int[][] numbers, int value, int newValue) {

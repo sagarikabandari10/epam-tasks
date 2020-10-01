@@ -3,10 +3,11 @@ import java.util.*;
 public class OptionalTask1 {
 
     public static boolean checkEvenCode(String str) {
-        for (int i = 0; i < str.length(); i++) {
-            System.out.println(str.charAt(i)+"-"+(int)str.charAt(i));
-            for (int j = i + 1; j < str.length(); j++) {
-                if ((int) str.charAt(i) > (int) str.charAt(j)) {
+        char[] chars = str.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            //System.out.println(chars[i]+"-"+(int)chars[i]);
+            for (int j = i + 1; j < chars.length; j++) {
+                if ((int) chars[i] > (int) chars[j]) {
                     return false;
                 }
             }
@@ -73,23 +74,22 @@ public class OptionalTask1 {
         for (String i : strings) {
             if (i.length() > avg)
                 System.out.print(i + "-" + i.length() + " ");
-//            else
-//                System.out.print("Lesser value"+i + "-" + i.length() + " ");
         }
 //       output: always-6 willbe-6 stars-5
 
         //6 .Find a number with digits in strict ascending order. If there are several such numbers, find the first one.
 
         System.out.println("\n\nFind a word with characters in strict ascending order of their codes");
-        strings = new String[]{"Ravi", "Sag", "Pra"};
+        strings = new String[]{"Ravi", "Sag", "Pra", "Raiv"};
         System.out.println(Arrays.asList(strings));
         for (String str:strings) {
             if(checkEvenCode(str)){
                 System.out.println("Asc order: "+str);
+                break;
             }
         }
         /*output: [Ravi, Sag, Pra]
-Asc               Asc order: Sag*/
+         Asc order: Sag*/
 
         //7. Find a number consisting only of different digits. If there are several such numbers, find the first one.
 
