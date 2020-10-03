@@ -1,38 +1,31 @@
 package com.epam.classes;
 
+import java.time.LocalDate;
 import java.time.temporal.ValueRange;
 import java.util.*;
 
 public class Customer extends Person
 {
-    private long creditCardNumber;
-    private long bankAccountNumber;
+    private final long creditCardNumber;
+    private final long bankAccountNumber;
 
-    public Customer(int _id, String _Surname, String _Name, String _Patronymic, String _DOB, String _Address, long _Phone,
+    public Customer(int _id, String _Surname, String _Name, String _Patronymic, LocalDate _DOB, String _Address, long _Phone,
                     int creditCardNumber, long bankAccountNumber) {
         super(_id, _Surname, _Name, _Patronymic, _DOB, _Address, _Phone);
         this.creditCardNumber = creditCardNumber;
         this.bankAccountNumber = bankAccountNumber;
     }
 
-    protected long getCreditCardNumber() {
-        return creditCardNumber;
-    }
-
-    protected long getBankAccountNumber() {
-        return bankAccountNumber;
-    }
-
     private static List<Customer> getCustomers(){
         List<Customer> list = new ArrayList<>();
-        list.add(new Customer(0,"Padakanti","Ravi kumar",
-                "  " ,"29/07/1986","Minsk",988225,6969,5615));
+        list.add(new Customer(0,"Padakanti","Ravi",
+                " Luc " ,LocalDate.of(1986, 7,29),"Minsk",988225,6969,5615));
         list.add(new Customer(3,"Padakanti","Prateek kumar",
-                "  " ,"29/07/1989","Minsk",258225,8789654,789258 ));
-        list.add(new Customer(1,"K","Anil ",
-                " Kumar " ,"29/07/1988","Minsk",988985,5893,45879635));
-        list.add(new Customer(2,"Padakanti","Sagarika",
-                "  " ,"29/07/1989","Hyderabad",966225,2547185,321654));
+                " Lack " ,LocalDate.of(2015, 5,28),"Minsk",258225,8789654,789258 ));
+        list.add(new Customer(1,"Kumudi","Anil ",
+                " Kumar " ,LocalDate.of(1989, 1,10),"Minsk",988985,5893,45879635));
+        list.add(new Customer(2,"Bandari","Kiran",
+                " Mack " ,LocalDate.of(2001, 8,14),"Hyderabad",966225,2547185,321654));
         return list;
     }
 
@@ -48,7 +41,7 @@ public class Customer extends Person
         customers.forEach(c -> System.out.print(c.getName()+" : "+c +"\n"));
 
         long minRange = 6000, maxRange=2600000;
-        System.out.println(String.format("\nList of customers whose credit card number in %d - %d range:", minRange, maxRange));
+        System.out.printf("\nList of customers whose credit card number in %d - %d range:%n", minRange, maxRange);
         for(Customer customer : customers) {
             if(ValueRange.of(minRange, maxRange).isValidIntValue(customer.creditCardNumber)) {
                 System.out.println("CreditCard-"+customer.creditCardNumber +" : "+customer);

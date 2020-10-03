@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Run {
-    private static List<Color> colors = new ArrayList<>();
+    private static final List<Color> colors = new ArrayList<>();
 
     private static void SetDefaultData() {
         colors.add(new Red(10, Color.FreshnessLevel.Middle));

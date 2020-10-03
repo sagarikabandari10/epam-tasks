@@ -16,6 +16,7 @@ public class OptionalTask1 {
     }
 
     public static boolean checkDistinctDigits(int in) {
+
         int[] digits = Integer.toString(in).chars().toArray();//Int - String - chars - array.
         for (int i = 0; i < digits.length; i++) {
             for (int j = i + 1; j < digits.length; j++) {
