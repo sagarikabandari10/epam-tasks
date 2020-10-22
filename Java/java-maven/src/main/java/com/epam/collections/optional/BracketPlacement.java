@@ -26,7 +26,7 @@ public class BracketPlacement {
     }
 
     public static void main(String[] args) {
-        String expr = "()";//format should always starts with open then close brackets.
+        String expr = "{(]]";//format should always starts with open then close brackets.
         if (IsPlacementCorrect(expr))//returns boolean.
             System.out.println("Balanced ");
         else
