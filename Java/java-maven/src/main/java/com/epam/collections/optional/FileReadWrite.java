@@ -9,8 +9,6 @@ import java.util.List;
 
 public class FileReadWrite {
 
-    private static final String fileName = "Sample.txt";
-
     private static String getStringReverse(String str) {
         StringBuffer stringBuffer = new StringBuffer();
         stringBuffer.append(str);
@@ -18,19 +16,13 @@ public class FileReadWrite {
     }
 
     private static File CheckFileExists() throws IOException {
-        File file = new File(getFilePath());
+        File file = new File("src/main/resources/Sample.txt");
         if (file.createNewFile()) {
             System.out.println("File created: " + file.getName());
         } else {
             System.out.println("File already exists.");
         }
         return file;
-    }
-
-    private static String getFilePath() {
-        Path root = FileSystems.getDefault().getPath("").toAbsolutePath();//returns root path C:\Sagarika\Git\epam-tasks\Java\java-maven
-        Path filePath = Paths.get(root.toString(),"src", "main", "resources", fileName);//adding root path with file location
-        return String.valueOf(filePath);
     }
 
     public static void main(String[] args){
@@ -45,7 +37,6 @@ public class FileReadWrite {
                 list.add(getStringReverse(str) +"\n");//add to StringBuffer.
             }
             System.out.println("\nAfter Reverse:");
-            //Collections.reverse(list);
             System.out.println(list.toString());//print StringBuffer bufferedReader sequence order(toString())
             bufferedReader.close();
         } catch (FileNotFoundException e) {//check for Input\output exe.(file read\write )
