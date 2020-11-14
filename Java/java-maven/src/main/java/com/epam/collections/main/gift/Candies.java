@@ -1,6 +1,6 @@
 package com.epam.collections.main.gift;
 
-public abstract class Candies implements Comparable<Candies>{
+public abstract class Candies implements Comparable<Candies> {
     private final double weight;
     private final double price;
     private final double sugars;
@@ -25,15 +25,15 @@ public abstract class Candies implements Comparable<Candies>{
 
     @Override
     public String toString() {
-        return getClass().getSimpleName()+ ": " +
-                "weight=" + weight +"kg"+
-                ", price=" + price +"$"+
-                ", sugars=" + sugars +"g";
+        return getClass().getSimpleName() + ": " +
+                "weight=" + weight + "kg" +
+                ", price=" + price + "$" +
+                ", sugars=" + sugars + "g";
 
     }
 
     @Override
     public int compareTo(Candies o) {
-        return (int) (this.weight-o.weight);
+        return (int) (this.weight - o.weight);
     }
 }
