@@ -23,7 +23,7 @@ public class RearrangeDigits {
     }
 
     public static void main(String[] args) {
-        int array[] = { -1, 2, -3, -4, 4, 5, 6, -7, 8, 9 }; // create & initialize int array.
+        int[] array = { -1, 2, -3, -4, 4, 5, 6, -7, 8, 9 }; // create & initialize int array.
         System.out.println("Before Swap: ");
         PrintArray(array);
         Rearrange(array);

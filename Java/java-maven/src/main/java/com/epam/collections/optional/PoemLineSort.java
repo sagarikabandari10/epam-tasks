@@ -6,12 +6,11 @@ import java.util.List;
 public class PoemLineSort {
 
     public static void main(String[] args) {
-        List<String> list = Arrays.asList(new String[]{
-                "Rain Rain"
+        List<String> list = Arrays.asList("Rain Rain"
                 , "Go away"
                 , "Come again"
                 , "Little Babullo"
-                , "Wants to play"});
+                , "Wants to play");
         list.sort((s1, s2) -> s1.length() - s2.length());//lamba exp & comparator.
         list.forEach(s -> System.out.println(s+"-"+s.length()));
     }

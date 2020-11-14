@@ -25,18 +25,27 @@ public abstract class Person implements Comparable<Object> {
     protected String getName() {
         return name;
     }
+
     protected LocalDate getDob() {
         return dob;
     }
-    protected int  get_Year() {
+
+    protected int get_Year() {
         return dob.getYear();
     }
 
     @Override
     public String toString() {
-        return " [id=" + id + ", Surname=" + surname + ", Name=" + name + ", Patronymic=" + patronymic
-                + ", DOB=" + dob + ", Address=" + address + ", Phone=" + phone+",";
+        return "id=" + id +
+                ", surname='" + surname + '\'' +
+                ", name='" + name + '\'' +
+                ", patronymic='" + patronymic + '\'' +
+                ", dob=" + dob +
+                ", address='" + address + '\'' +
+                ", phone=" + phone +
+                ", ";
     }
+
     @Override
     public int compareTo(Object o) {
         return this.name.compareTo(((Person) o).name);

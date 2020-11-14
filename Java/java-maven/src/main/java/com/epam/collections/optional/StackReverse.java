@@ -6,7 +6,7 @@ import java.util.Stack;
 
 public class StackReverse {
     private static final Stack<Integer> digits = new Stack<>();
-    private static List<Integer> list = new ArrayList<>();
+    private static final List<Integer> list = new ArrayList<>();
 
     private static void setDefaultValuesForStack() {
         digits.push(10);

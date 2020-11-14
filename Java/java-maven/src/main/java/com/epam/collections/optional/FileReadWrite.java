@@ -1,16 +1,13 @@
 package com.epam.collections.optional;
 
 import java.io.*;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
 public class FileReadWrite {
 
     private static String getStringReverse(String str) {
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuilder stringBuffer = new StringBuilder();
         stringBuffer.append(str);
         return stringBuffer.reverse().toString();
     }
@@ -25,23 +22,21 @@ public class FileReadWrite {
         return file;
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         try {
             File file = CheckFileExists();
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String str;
             List<String> list = new ArrayList<>();
             System.out.println("\nBefore Reverse:");
-            while((str = bufferedReader.readLine())!=null) {//reads line by line & checks for nulls & assign to st variable.if condition true enters loop
+            while ((str = bufferedReader.readLine()) != null) {//reads line by line & checks for nulls & assign to st variable.if condition true enters loop
                 System.out.println(str); //print st(variable name)
-                list.add(getStringReverse(str) +"\n");//add to StringBuffer.
+                list.add(getStringReverse(str) + "\n");//add to StringBuffer.
             }
             System.out.println("\nAfter Reverse:");
             System.out.println(list.toString());//print StringBuffer bufferedReader sequence order(toString())
             bufferedReader.close();
-        } catch (FileNotFoundException e) {//check for Input\output exe.(file read\write )
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (IOException e) {//check for Input\output exe.(file read\write )
             e.printStackTrace();
         }
     }

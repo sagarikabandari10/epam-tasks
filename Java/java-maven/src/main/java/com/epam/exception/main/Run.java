@@ -15,7 +15,7 @@ public class Run {
         Subject mat = new Subject(Common.SUBJECTS.MATHS,6);
         Subject com = new Subject(Common.SUBJECTS.COMPUTERS,7);
         Subject phy = new Subject(Common.SUBJECTS.PHYSICS,9);
-        Subject cmm= new Subject(Common.SUBJECTS.COMMERS,6);
+        Subject cmm= new Subject(Common.SUBJECTS.COMMERCE,6);
         Group g1 = new Group(Common.GROUP.MBA, Arrays.asList(mat,cmm));
         Group g2 = new Group(Common.GROUP.MCA, Arrays.asList(mat,com));
         Group g3 = new Group(Common.GROUP.PHD, Arrays.asList(che));

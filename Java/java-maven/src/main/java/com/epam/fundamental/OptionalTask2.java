@@ -16,11 +16,9 @@ public class OptionalTask2 {
     }
 
     private static void printMatrix(int[][] matrix) {
-        for(int i = 0; i< matrix.length; i++)
-        {
-            for(int j = 0; j< matrix[0].length; j++)
-            {
-                System.out.print(matrix[i][j] + " ");
+        for (int[] ints : matrix) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(ints[j] + " ");
             }
             System.out.println();
         }
@@ -28,17 +26,17 @@ public class OptionalTask2 {
 
     public static int getMaxValue(int[][] numbers) {
         int maxValue = numbers[0][0];
-        for (int i = 0; i < numbers.length; i++) {
+        for (int[] number : numbers) {
             for (int j = 0; j < numbers[0].length; j++) {
-                if (numbers[i][j] > maxValue) {
-                    maxValue = numbers[i][j];
+                if (number[j] > maxValue) {
+                    maxValue = number[j];
                 }
             }
         }
         return maxValue;
     }
 
-    public static void sortColumn(int array[][], int e) {
+    public static void sortColumn(int[][] array, int e) {
         for (int i = 0; i < array.length; i++)
             for (int k = i + 1; k < array[0].length; k++) {
                 if (array[i][e] > array[k][e]) {

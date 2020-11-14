@@ -42,7 +42,7 @@ public class OptionalTask1 {
         System.out.println("Sorted Array = " + Arrays.toString(ints));
         System.out.println("Shortest number = " + ints[0]);
         System.out.println("Longest number = " + ints[ints.length - 1]);
-        System.out.println("");
+        System.out.println();
         /* output:
         Array = [50, 55, 87, 90, 95, 100, 125, 144, 1, 8, 10, 43]
         Array length = 12

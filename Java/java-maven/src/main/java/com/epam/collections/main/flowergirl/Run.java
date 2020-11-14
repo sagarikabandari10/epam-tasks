@@ -14,8 +14,8 @@ public class Run {
 
     public static void main(String[] args) {
         SetDefaultData();
-        Bouquet bouquet = new Bouquet("Designer", colors, Bouquet.Wrapper.PolyDecore,
-                Bouquet.CARD.Birthday, Bouquet.Design.Fancy, Bouquet.DOLL.Bunny);
+        Bouquet bouquet = new Bouquet("Designer", colors, Bouquet.Wrapper.PolyDecor,
+                Bouquet.Card.Birthday, Bouquet.Design.Fancy, Bouquet.Doll.Bunny);
         System.out.println(bouquet);
     }
 }

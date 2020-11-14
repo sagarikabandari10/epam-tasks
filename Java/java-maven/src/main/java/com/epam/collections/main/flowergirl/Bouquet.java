@@ -3,14 +3,14 @@ package com.epam.collections.main.flowergirl;
 import java.util.List;
 
 public class Bouquet {
+    private final List<Color> colors;
+    private final Wrapper wrap;
+    private final Card card;
+    private final Design design;
+    private final Doll doll;
     private String name;
-    private List<Color> colors;
-    private Wrapper wrap;
-    private CARD card;
-    private Design design;
-    private DOLL doll;
 
-    public Bouquet(String _name, List<Color> _colors, Wrapper _wrap, CARD _card, Design _bouDesign, DOLL _doll){
+    public Bouquet(String _name, List<Color> _colors, Wrapper _wrap, Card _card, Design _bouDesign, Doll _doll) {
         this.name = _name;
         this.colors = _colors;
         this.wrap = _wrap;
@@ -27,19 +27,30 @@ public class Bouquet {
         this.name = name;
     }
 
-    public List<Color> getColors() {
-        return colors;
-    }
-
-    public void setColors(List<Color> colors) {
-        this.colors = colors;
+    @Override
+    public String toString() {
+        StringBuilder s = new StringBuilder();
+        s.append("Bouquet Name: ").append(name).append("\n*******************\n");
+        double cost = 0;
+        for (Color c : colors) {
+            s.append(c.toString()).append("\n"); // calls toString() method based on color.
+            cost += c.getCost(); // cost of each flower.
+        }
+        cost += this.wrap.value + this.card.value + this.design.value + this.doll.value;// flower cost + accessories.
+        s.append("\nAccessories: ");
+        s.append("Wrapper - ").append(this.wrap).append("(").append(this.wrap.value).append("$)");
+        s.append(", Card - ").append(this.card).append("(").append(this.card.value).append("$)");
+        s.append(", Type - ").append(this.design).append("(").append(this.design.value).append("$)");
+        s.append(", Doll - ").append(this.doll).append("(").append(this.doll.value).append("$)");
+        s.append("\nTotal Cost for Bouquet: %s$");
+        return String.format(s.toString(), cost);
     }
 
     //enums
     public enum Wrapper {
-        NewPaper(0), CrepePaper(2), PlasticPaper(3), PolyDecore(5);
+        CrepePaper(2), PlasticPaper(3), PolyDecor(5);
 
-        private int value;
+        private final int value;
 
         Wrapper(int i) {
             this.value = i;
@@ -50,12 +61,12 @@ public class Bouquet {
         }
     }
 
-    public enum CARD {
-        Birthday(2), Anniversery(1.5), BestWisher(1), NoCard(0);
+    public enum Card {
+        Anniversary(1.5), BestWisher(1), Birthday(2), NoCard(0);
 
-        private double value;
+        private final double value;
 
-        CARD(double i) {
+        Card(double i) {
             this.value = i;
         }
 
@@ -67,7 +78,7 @@ public class Bouquet {
     public enum Design {
         Classic(1.8), Fancy(2.5), Normal(1);
 
-        private double value;
+        private final double value;
 
         Design(double d) {
             this.value = d;
@@ -78,37 +89,18 @@ public class Bouquet {
         }
     }
 
-    public enum DOLL {
-        Teddybear(4), Bunny(1.2), Cat(2.2);
+    public enum Doll {
+        Bunny(1.2), Cat(2.2), Teddie(4);
 
-        private double value;
+        private final double value;
 
-        DOLL(double d1) {
+        Doll(double d1) {
             this.value = d1;
         }
 
         public double getValue() {
             return value;
         }
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder s = new StringBuilder();
-        s.append("Bouquet Name: " + name + "\n*******************\n");
-        double cost = 0;
-        for (Color c : colors) {
-            s.append(c.toString()+"\n"); // calls toString() method based on color.
-            cost += c.getCost(); // cost of each flower.
-        }
-        cost += this.wrap.value + this.card.value + this.design.value + this.doll.value;// flower cost + accessories.
-        s.append("\nAccessories: ");
-        s.append("Wrapper - " + this.wrap + "(" + this.wrap.value + "$)");
-        s.append(", Card - " + this.card + "(" + this.card.value + "$)");
-        s.append(", Type - " + this.design + "(" + this.design.value + "$)");
-        s.append(", Doll - " + this.doll + "(" + this.doll.value + "$)");
-        s.append("\nTotal Cost for Bouquet: %s$");
-        return String.format(s.toString(), cost);
     }
 
 }

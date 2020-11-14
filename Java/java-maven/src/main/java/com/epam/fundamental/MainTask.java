@@ -12,8 +12,9 @@ public class MainTask {
 
     public static String Reverse(String[] args) {
         StringBuilder stringReverse = new StringBuilder();//StringBuilder are mutable classes. StringBuffer is thread-safe and synchronized whereas StringBuilder is not. That’s why StringBuilder is faster than StringBuffer.
-        if (args.length == 0)
+        if (args.length == 0) {
             args = new String[]{"Sag", "Ravi"};
+        }
         System.out.println(Arrays.asList(args));
         for (int i = args.length - 1; i >= 0; i--) {//{"Sag", "Ravi"}; args.length=2
             for (int j = args[i].length() - 1; j >= 0; j--) {//args[0].length()=3; args[1].length()=4
