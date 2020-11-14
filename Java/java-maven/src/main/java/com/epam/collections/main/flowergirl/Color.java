@@ -3,51 +3,42 @@ package com.epam.collections.main.flowergirl;
 import java.util.Random;
 
 public abstract class Color implements Comparable <Color>{
-
-    //private variables
     private String name;
     private final int stemLength;
-    private final FreshnessLevel fresh;
+    private final Freshness fresh;
     private double cost;
 
-    //parameterised constructor
-    public Color(int _stemLength, FreshnessLevel _fresh){
-        this.stemLength=_stemLength;
-        this.fresh=_fresh;
+    public Color(int stemLength, Freshness fresh){
+        this.stemLength=stemLength;
+        this.fresh=fresh;
     }
 
-    //abstract methods
     public abstract void setFlowerName();
-
     public abstract void setFlowerCost();
-
     public double getCost() {
         return cost;
     }
-
-    //concrete methods
     protected void getRandomFlower(String[] flowers){
         Random random = new Random();
         int n = random.nextInt(flowers.length);
         name = flowers[n];
     }
 
-    protected void costByFreshness(double _cost){
+    protected void costByFreshness(double cost){
         switch (fresh) {
             case Full:
-                cost=_cost;
+                this.cost =cost;
                 break;
             case Middle:
-                cost=_cost-1;
+                this.cost =cost-1;
                 break;
             case Old:
-                cost=_cost-2;
+                this.cost =cost-2;
                 break;
         }
     }
 
-    //enums
-    public enum FreshnessLevel{
+    public enum Freshness {
         Full, Middle, Old
     }
 
@@ -61,6 +52,6 @@ public abstract class Color implements Comparable <Color>{
 
     @Override
     public int compareTo(Color o) {
-        return Integer.compare(this.fresh.ordinal(), o.fresh.ordinal());//ordinal(): order of enum constants
+        return Integer.compare(this.fresh.ordinal(), o.fresh.ordinal());
     }
 }

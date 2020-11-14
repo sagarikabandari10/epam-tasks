@@ -1,15 +1,15 @@
 package com.epam.collections.main.flowergirl;
 
 public class Yellow extends Color {
-    public Yellow(int _stemLength, FreshnessLevel _fresh) {
-        super(_stemLength, _fresh);
+    public Yellow(int stemLength, Freshness fresh) {
+        super(stemLength, fresh);
         setFlowerName();
         setFlowerCost();
     }
 
     @Override
     public void setFlowerName() {
-        getRandomFlower(new String[] { "Sunflower", "Yarrow", "Hibiscus", "Carnation" });
+        getRandomFlower(new String[]{"Sunflower", "Yarrow", "Hibiscus", "Carnation"});
     }
 
     @Override

@@ -1,9 +1,8 @@
 package com.epam.collections.main.flowergirl;
 
-public class Red extends Color{
-
-    public Red(int _stemLength, FreshnessLevel _fresh) {
-        super(_stemLength, _fresh);
+public class Red extends Color {
+    public Red(int stemLength, Freshness fresh) {
+        super(stemLength, fresh);
         setFlowerName();
         setFlowerCost();
     }

@@ -61,15 +61,15 @@ public class Student extends Person {
     private static List<Student> getStudents() {
         List<Student> list = new ArrayList<>();
         list.add(new Student(0, "Padakanti", "Ravi kumar",
-                "  ", LocalDate.of(1986, 7, 29), "Minsk", 988225, Faculties.F1.toString(), Courses.C1.toString(), Groups.G1.toString()));
+                "  ", LocalDate.of(1986, 7, 29), "Minsk", 988225, Faculties.MEDICINE.toString(), Courses.CHEMICAL.toString(), Groups.MBBS.toString()));
         list.add(new Student(1, "K", "Anil ",
-                " Kumar ", LocalDate.of(1988, 1, 14), "Minsk", 988985, Faculties.F2.toString(), Courses.C2.toString(), Groups.G3.toString()));
+                " Kumar ", LocalDate.of(1988, 1, 14), "Minsk", 988985, Faculties.ARTS.toString(), Courses.SYSTEMS.toString(), Groups.MTECH.toString()));
         list.add(new Student(2, "Bandari", " Sagarika",
-                "  ", LocalDate.of(1989, 1, 10), "Hyderabad", 966225, Faculties.F1.toString(), Courses.C1.toString(), Groups.G2.toString()));
+                "  ", LocalDate.of(1989, 1, 10), "Hyderabad", 966225, Faculties.MEDICINE.toString(), Courses.CHEMICAL.toString(), Groups.MBA.toString()));
         list.add(new Student(3, "Padakanti", "Prateek kumar",
-                "  ", LocalDate.of(2016, 5, 28), "Minsk", 258225, Faculties.F2.toString(), Courses.C3.toString(), Groups.G2.toString()));
+                "  ", LocalDate.of(2016, 5, 28), "Minsk", 258225, Faculties.ARTS.toString(), Courses.ARCHITECTURE.toString(), Groups.MBA.toString()));
         list.add(new Student(3, "Neol", "John",
-                "  ", LocalDate.of(2001, 8, 12), "Minsk", 258225, Faculties.F3.toString(), Courses.C1.toString(), Groups.G2.toString()));
+                "  ", LocalDate.of(2001, 8, 12), "Minsk", 258225, Faculties.ENGINEERING.toString(), Courses.CHEMICAL.toString(), Groups.MBA.toString()));
         return list;
     }
 
@@ -79,10 +79,10 @@ public class Student extends Person {
                 + ", course=" + course + ", group=" + group + "\n";
     }
 
-    private enum Faculties {F1, F2, F3}
+    private enum Faculties {MEDICINE, ARTS, ENGINEERING}
 
-    private enum Courses {C1, C2, C3}
+    private enum Courses {CHEMICAL, SYSTEMS, ARCHITECTURE, FINEARTS, DENTISTRY, NURSING}
 
-    private enum Groups {G1, G2, G3}
+    private enum Groups {MBBS, MBA, MTECH}
 }
 
