@@ -1,14 +1,15 @@
 package com.epam.fundamental;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class mainTaskTest {
+class MainTaskTest {
 
     @org.junit.jupiter.api.Test
     void greetingUser() {
         String value = "TestSagarika";
         String expected = "Welcome " + value;
-        String actual = MainTask.GreetingUser(value);
+        String actual = MainTask.greetingUser(value);
 
         assertEquals(expected, actual);
     }
@@ -17,7 +18,7 @@ class mainTaskTest {
     void reverse() {
         String[] value = {"Test", "Demo", "hello", "print"};
         String expected = "tnirp olleh omeD tseT";
-        String actual = MainTask.Reverse(value);
+        String actual = MainTask.reverse(value);
 
         assertEquals(expected, actual);
     }
@@ -25,18 +26,18 @@ class mainTaskTest {
     @org.junit.jupiter.api.Test
     void randomNumbers() {
         int value = 2;
-        int[] actual = MainTask.RandomNumbers(value);
+        int[] actual = MainTask.randomNumbers(value);
 
-        for (int i:actual) {
-            assertTrue(i<10);
+        for (int i : actual) {
+            assertTrue(i < 10);
         }
     }
 
     @org.junit.jupiter.api.Test
     void SumOfNumbers() {
-        String[] value = new String[]{"Test", "10", "Demo","5"};
+        String[] value = new String[]{"Test", "10", "Demo", "5"};
         int expected = 15;
-        int actual = MainTask.SumOfNumbers(value);
+        int actual = MainTask.sumOfNumbers(value);
 
         assertEquals(expected, actual);
     }
