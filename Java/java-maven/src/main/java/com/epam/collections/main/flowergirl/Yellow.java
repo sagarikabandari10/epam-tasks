@@ -1,5 +1,7 @@
 package com.epam.collections.main.flowergirl;
 
+import com.epam.collections.main.flowergirl.models.Freshness;
+
 public class Yellow extends Color {
     public Yellow(int stemLength, Freshness fresh) {
         super(stemLength, fresh);

@@ -1,5 +1,9 @@
 package com.epam.collections.main.flowergirl;
 
+import com.epam.collections.main.flowergirl.models.Card;
+import com.epam.collections.main.flowergirl.models.Design;
+import com.epam.collections.main.flowergirl.models.Wrapper;
+
 import java.util.List;
 
 public class Bouquet {
@@ -20,6 +24,7 @@ public class Bouquet {
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -33,37 +38,13 @@ public class Bouquet {
             stringBuilder.append(color.toString()).append("\n");
             cost += color.getCost();
         }
-        cost += this.wrap.value + this.card.value + this.design.value;
+        cost += this.wrap.getValue() + this.card.getValue() + this.design.getValue();
         stringBuilder.append("\nAccessories: ");
-        stringBuilder.append("Wrapper - ").append(this.wrap).append("(").append(this.wrap.value).append("$)");
-        stringBuilder.append(", Card - ").append(this.card).append("(").append(this.card.value).append("$)");
-        stringBuilder.append(", Type - ").append(this.design).append("(").append(this.design.value).append("$)");
+        stringBuilder.append("Wrapper - ").append(this.wrap).append("(").append(this.wrap.getValue()).append("$)");
+        stringBuilder.append(", Card - ").append(this.card).append("(").append(this.card.getValue()).append("$)");
+        stringBuilder.append(", Type - ").append(this.design).append("(").append(this.design.getValue()).append("$)");
         stringBuilder.append("\nTotal Cost for Bouquet: %s$");
         return String.format(stringBuilder.toString(), cost);
-    }
-
-    public enum Wrapper {
-        CREPEPAPER(2), PLASTICPAPER(3), POLYDECOR(5);
-        private final int value;
-        Wrapper(int i) {
-            this.value = i;
-        }
-    }
-
-    public enum Card {
-        ANNIVERSARY(1.5), BESTWISHER(1), BIRTHDAY(2), NOCARD(0);
-        private final double value;
-        Card(double i) {
-            this.value = i;
-        }
-    }
-
-    public enum Design {
-        CLASSIC(1.8), FANCY(2.5), NORMAL(1);
-        private final double value;
-        Design(double d) {
-            this.value = d;
-        }
     }
 
 }
