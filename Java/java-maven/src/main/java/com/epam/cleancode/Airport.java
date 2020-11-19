@@ -11,6 +11,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/* version: 1.1
+ made by Vitali Shulha
+ 4-Jan-2019*/
+
 public class Airport {
 
     private final List<? extends Flight> flights;
