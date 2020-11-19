@@ -3,7 +3,7 @@ package com.epam.collections.optional;
 import java.util.Arrays;
 import java.util.List;
 
-public class PoemLineSort {
+public class Poem {
     public static void main(String[] args) {
         List<String> list = Arrays.asList("Rain Rain"
                 , "Go away"

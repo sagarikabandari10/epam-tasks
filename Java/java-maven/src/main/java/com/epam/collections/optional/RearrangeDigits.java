@@ -5,12 +5,12 @@ public class RearrangeDigits {
         int[] array = {-1, 2, -3, -4, 4, 5, 6, -7, 8, 9};
         System.out.println("Before Swap: ");
         printArray(array);
-        rearrange(array);
+        swapDigitsWithoutTemp(array);
         System.out.println("\nAfter Swap: ");
         printArray(array);
     }
 
-    public static void rearrange(int[] array) {
+    public static void swapDigitsWithoutTemp(int[] array) {
         int j = 0;
         for (int i = 0; i < array.length; i++) {
             if (array[i] > 0) {

@@ -10,14 +10,14 @@ import java.util.List;
 public class FileReadWrite {
     public static void main(String[] args) {
         try {
-            File file = CheckFileExists();
+            File file = getFileByPathName("src/main/resources/Sample.txt");
             BufferedReader bufferedReader = new BufferedReader(new FileReader(file));
             String line;
             List<String> list = new ArrayList<>();
             System.out.println("\nBefore Reverse:");
             while ((line = bufferedReader.readLine()) != null) {
                 System.out.println(line);
-                list.add(getStringReverse(line) + "\n");
+                list.add(getReverseString(line) + "\n");
             }
             System.out.println("\nAfter Reverse:");
             System.out.println(list.toString());
@@ -27,14 +27,14 @@ public class FileReadWrite {
         }
     }
 
-    private static String getStringReverse(String line) {
+    private static String getReverseString(String line) {
         StringBuilder stringBuffer = new StringBuilder();
         stringBuffer.append(line);
         return stringBuffer.reverse().toString();
     }
 
-    private static File CheckFileExists() throws IOException {
-        File file = new File("src/main/resources/Sample.txt");
+    private static File getFileByPathName(String pathName) throws IOException {
+        File file = new File(pathName);
         if (file.createNewFile()) {
             System.out.println("File created: " + file.getName());
         } else {

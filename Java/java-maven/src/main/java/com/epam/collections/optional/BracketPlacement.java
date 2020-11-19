@@ -5,14 +5,14 @@ import java.util.Stack;
 public class BracketPlacement {
     public static void main(String[] args) {
         String brackets = "{()}";
-        if (isPlacementCorrect(brackets)) {
+        if (hasCorrectBrackets(brackets)) {
             System.out.println("Balanced");
         } else {
             System.out.println("Not Balanced");
         }
     }
 
-    public static boolean isPlacementCorrect(String brackets) {
+    public static boolean hasCorrectBrackets(String brackets) {
         if (brackets.length() == 0) {
             return false;
         }
