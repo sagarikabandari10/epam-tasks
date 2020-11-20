@@ -1,5 +1,9 @@
 package com.epam.classes;
 
+import com.epam.classes.models.Courses;
+import com.epam.classes.models.Faculties;
+import com.epam.classes.models.Groups;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +11,6 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class Student extends Person {
-
     private final String faculty;
     private final String course;
     private final String group;
@@ -21,25 +24,25 @@ public class Student extends Person {
     }
 
     public static void main(String[] args) {
-        List<Student> studentList = getStudents();
+        List<Student> students = getStudents();
         System.out.println("List of students of a given faculty: ");
-        for (Faculties f : Faculties.values()) {
-            System.out.println(f);
-            for (Student s : studentList) {
-                if (s.faculty.equals(f.toString())) {
-                    System.out.println("\t" + s);
+        for (Faculties faculty : Faculties.values()) {
+            System.out.println(faculty);
+            for (Student student : students) {
+                if (student.faculty.equals(faculty.toString())) {
+                    System.out.println("\t" + student);
                 }
             }
         }
         System.out.println("\nLists of students for each faculty and course: ");
 
-        for (Faculties f : Faculties.values()) {
-            System.out.println(f);
-            for (Courses c : Courses.values()) {
-                System.out.println("\t" + c);
-                for (Student s : studentList) {
-                    if (s.faculty.equals(f.toString()) && s.course.equals(c.toString())) {
-                        System.out.println("\t\t" + s);
+        for (Faculties faculty : Faculties.values()) {
+            System.out.println(faculty);
+            for (Courses course : Courses.values()) {
+                System.out.println("\t" + course);
+                for (Student student : students) {
+                    if (student.faculty.equals(faculty.toString()) && student.course.equals(course.toString())) {
+                        System.out.println("\t\t" + student);
                     }
                 }
             }
@@ -47,18 +50,28 @@ public class Student extends Person {
 
         int year = 1985;
         System.out.println("\nList of students born after a given year: " + year);
-        studentList.stream()
-                .filter(p -> p.getDob().getYear() > year)
-                .forEach(s1 -> System.out.print(s1.get_Year() + " : " + s1 + "\n"));
+        getStudentsByYear(students, year)
+                .forEach(student -> System.out.print(student.get_Year() + " : " + student + "\n"));
 
         System.out.println("\nList of the study group:");
-        Map<String, List<Student>> map = studentList.stream()
-                .collect(Collectors.groupingBy(p -> p.group));
+        Map<String, List<Student>> map = students.stream()
+                .collect(Collectors.groupingBy(student -> student.group));
         map.forEach((key, value) -> System.out.println(key + ":" + value));
-
     }
 
-    private static List<Student> getStudents() {
+    public static List<Student> getStudentsByYear(List<Student> students, int year) {
+        if (students == null || students.size() == 0) {
+            throw new IllegalArgumentException("Invaild students.");
+        }
+        if (Integer.toString(year).length() != 4) {
+            throw new IllegalArgumentException("Invaild year.");
+        }
+        return students.stream()
+                .filter(student -> student.getDob().getYear() > year)
+                .collect(Collectors.toList());
+    }
+
+    public static List<Student> getStudents() {
         List<Student> list = new ArrayList<>();
         list.add(new Student(0, "Padakanti", "Ravi kumar",
                 "  ", LocalDate.of(1986, 7, 29), "Minsk", 988225, Faculties.MEDICINE.toString(), Courses.CHEMICAL.toString(), Groups.MBBS.toString()));
@@ -78,11 +91,5 @@ public class Student extends Person {
         return super.toString() + " faculty=" + faculty
                 + ", course=" + course + ", group=" + group + "\n";
     }
-
-    private enum Faculties {MEDICINE, ARTS, ENGINEERING}
-
-    private enum Courses {CHEMICAL, SYSTEMS, ARCHITECTURE, FINEARTS, DENTISTRY, NURSING}
-
-    private enum Groups {MBBS, MBA, MTECH}
 }
 

@@ -26,13 +26,17 @@ public class Customer extends Person {
         long minRange = 6_000, maxRange = 2_600_000;
         System.out.printf("\nList of customers whose credit card number in %d - %d range:%n", minRange, maxRange);
         for (Customer customer : customers) {
-            if (ValueRange.of(minRange, maxRange).isValidIntValue(customer.creditCardNumber)) {
+            if (isCreditCardWithInRange(minRange, maxRange, customer.creditCardNumber)) {
                 System.out.println("CreditCard-" + customer.creditCardNumber + " : " + customer);
             }
         }
     }
 
-    private static List<Customer> getCustomers() {
+    public static boolean isCreditCardWithInRange(long minRange, long maxRange, long creditCardNumber) {
+        return ValueRange.of(minRange, maxRange).isValidIntValue(creditCardNumber);
+    }
+
+    public static List<Customer> getCustomers() {
         List<Customer> list = new ArrayList<>();
         list.add(new Customer(0, "Padakanti", "Ravi",
                 " Luc ", LocalDate.of(1986, 7, 29), "Minsk", 988225, 6969, 5615));
