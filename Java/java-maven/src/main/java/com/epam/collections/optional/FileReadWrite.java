@@ -27,13 +27,13 @@ public class FileReadWrite {
         }
     }
 
-    private static String getReverseString(String line) {
+    public static String getReverseString(String line) {
         StringBuilder stringBuffer = new StringBuilder();
         stringBuffer.append(line);
         return stringBuffer.reverse().toString();
     }
 
-    private static File getFileByPathName(String pathName) throws IOException {
+    public static File getFileByPathName(String pathName) throws IOException {
         File file = new File(pathName);
         if (file.createNewFile()) {
             System.out.println("File created: " + file.getName());
