@@ -1,0 +1,2 @@
+Remote added for backup of epam-tasks.git repository.
+Remote repo: epam-tasks-backup.git
