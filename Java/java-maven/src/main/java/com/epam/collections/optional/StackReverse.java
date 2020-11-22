@@ -5,26 +5,27 @@ import java.util.List;
 import java.util.Stack;
 
 public class StackReverse {
-    private static final Stack<Integer> digits = new Stack<>();
-    private static final List<Integer> list = new ArrayList<>();
-
     public static void main(String[] args) {
-        setDefaultValuesForStack();
+        Stack<Integer> digits = setDefaultValuesForStack();
         System.out.println("Before Reverse: "+ digits);
-        reverse();
+        List<Integer> list = reverse(digits);
         System.out.println("After Reverse: "+list);
     }
 
-    private static void setDefaultValuesForStack() {
+    private static Stack<Integer> setDefaultValuesForStack() {
+        Stack<Integer> digits = new Stack<>();
         digits.push(10);
         digits.push(15);
         digits.push(3);
         digits.push(44);
+        return digits;
     }
 
-    private static void reverse() {
+    public static List<Integer> reverse(Stack<Integer> digits) {
+        List<Integer> list = new ArrayList<>();
         while(digits.size() > 0){
             list.add(digits.pop());
         }
+        return list;
     }
 }
