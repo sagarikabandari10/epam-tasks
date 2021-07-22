@@ -1,21 +1,30 @@
 package com.epam.exception.main;
 
+import com.epam.exception.main.models.Subjects;
+
 public class Subject {
-    private final Common.SUBJECTS name;
-    private final int grade;
+    private final Subjects name;
+    private int score;
 
-    public Subject(Common.SUBJECTS name, int grade) {
+    public Subject(Subjects name) {
         this.name = name;
-        this.grade = grade;
     }
 
-    public Common.SUBJECTS getName() {
-        return name;
+    public Subjects getName() {
+        return this.name;
     }
 
-    public int getGrade() {
-        return grade;
+    public int getScore() {
+        return this.score;
     }
 
+    public void setScore(int score) {
+        this.score = score;
+    }
 
+    @Override
+    public String toString() {
+        return "Subject{" + name +
+                '}';
+    }
 }
