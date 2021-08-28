@@ -23,9 +23,20 @@ class HomeTest {
     }
 
     @Test
-    void getData() {
+    void ICanWin() {
         String expected = "Hello from WebDriver";
-        String actual = Home.getRawPasteData(driver, expected, Highlighting.None.name(), Expiration.NEVER.getValue(),"hello");
+        String title = "helloweb";
+        String actual = Home.getRawPasteData(driver, expected, Highlighting.None.name(), Expiration.TEN_MINUTES.getValue(),title);
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test
+    void BringItOn() {
+        String expected = "git config --global user.name  \"New Sheriff in Town\"\n" +
+                "git reset $(git commit-tree HEAD^{tree} -m \"Legacy code\")\n" +
+                "git push origin master --force";
+        String title = "how to gain dominance among developers";
+        String actual = Home.getRawPasteData(driver, expected, Highlighting.Bash.name(), Expiration.TEN_MINUTES.getValue(),title);
         Assert.assertEquals(actual, expected);
     }
 }
