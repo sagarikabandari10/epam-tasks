@@ -1,4 +1,4 @@
-package com.epam.webdriver.page.wait;
+package com.epam.webdriver.util;
 
 import org.openqa.selenium.WebDriver;
 

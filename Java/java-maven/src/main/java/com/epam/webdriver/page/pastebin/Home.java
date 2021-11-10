@@ -2,14 +2,14 @@ package com.epam.webdriver.page.pastebin;
 
 import com.epam.webdriver.page.pastebin.model.Expiration;
 import com.epam.webdriver.page.pastebin.model.Highlighting;
-import com.epam.webdriver.page.wait.Implicit;
+import com.epam.webdriver.util.Implicit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.epam.webdriver.page.driver.Utils.findElement;
-import static com.epam.webdriver.page.driver.Utils.findElementByElements;
+import static com.epam.webdriver.util.WebElementUtils.findElement;
+import static com.epam.webdriver.util.WebElementUtils.findElementByElements;
 
 public class Home {
     private static final String HOME_URL = "https://pastebin.com/";

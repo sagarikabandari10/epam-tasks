@@ -1,10 +1,9 @@
 package com.epam.webdriver.page.email;
 
+import com.epam.webdriver.util.JavascriptExecutorUtils;
+import com.epam.webdriver.util.WebElementUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-
-import static com.epam.webdriver.page.driver.Utils.findElement;
-import static com.epam.webdriver.page.driver.Utils.selectWebElement;
 
 public class Yopmail {
     private final WebDriver driver;
@@ -22,14 +21,14 @@ public class Yopmail {
     }
 
     public String GetRandomEmail(){
-        selectWebElement(driver, randomEmailAddressButton);
-        return findElement(driver, copyEmail).getText();
+        JavascriptExecutorUtils.selectWebElement(driver, randomEmailAddressButton);
+        return WebElementUtils.findElement(driver, copyEmail).getText();
     }
 
     public String GetEstimationCost(){
-        selectWebElement(driver, checkInboxButton);
+        JavascriptExecutorUtils.selectWebElement(driver, checkInboxButton);
         driver.switchTo().frame(frameName);
-        return findElement(driver, costEstimation).getText();
+        return WebElementUtils.findElement(driver, costEstimation).getText();
     }
 
 }

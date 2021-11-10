@@ -1,7 +1,7 @@
-package com.epam.webdriver.page.pastebin;
+package com.epam.webdriver.page.google;
 
-import com.epam.webdriver.page.cloud.google.ProductCalculator;
-import com.epam.webdriver.page.driver.Browser;
+import com.epam.webdriver.page.google.ProductCalculator;
+import com.epam.webdriver.driver.Browser;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -13,7 +13,8 @@ public class ProductCalculatorTest {
 
     @BeforeEach
     void setUp() {
-        WebDriver driver = Browser.setup();
+        System.setProperty("browser", "edge");
+        WebDriver driver = Browser.getDriver();
         calculator = new ProductCalculator(driver);
     }
 

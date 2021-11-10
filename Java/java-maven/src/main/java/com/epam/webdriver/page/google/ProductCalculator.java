@@ -1,7 +1,7 @@
-package com.epam.webdriver.page.cloud.google;
+package com.epam.webdriver.page.google;
 
 import com.epam.webdriver.page.email.Yopmail;
-import com.epam.webdriver.page.wait.Implicit;
+import com.epam.webdriver.util.Implicit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -9,7 +9,9 @@ import org.openqa.selenium.WebDriver;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-import static com.epam.webdriver.page.driver.Utils.*;
+import static com.epam.webdriver.util.JavascriptExecutorUtils.openNewTab;
+import static com.epam.webdriver.util.JavascriptExecutorUtils.selectWebElement;
+import static com.epam.webdriver.util.WebElementUtils.*;
 
 public class ProductCalculator {
     private static WebDriver driver;

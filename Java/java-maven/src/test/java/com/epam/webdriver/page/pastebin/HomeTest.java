@@ -1,6 +1,6 @@
 package com.epam.webdriver.page.pastebin;
 
-import com.epam.webdriver.page.driver.Browser;
+import com.epam.webdriver.driver.Browser;
 import com.epam.webdriver.page.pastebin.model.Expiration;
 import com.epam.webdriver.page.pastebin.model.Highlighting;
 import org.junit.jupiter.api.AfterEach;
@@ -14,7 +14,8 @@ class HomeTest {
 
     @BeforeEach
     void setUp() {
-        driver = Browser.setup();
+        System.setProperty("browser", "chrome");
+        driver = Browser.getDriver();
     }
 
     @AfterEach
