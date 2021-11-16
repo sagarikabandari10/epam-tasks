@@ -1,12 +1,15 @@
 package com.epam.collections.optional;
 
-import org.junit.jupiter.api.Test;
+
+
+import org.testng.Assert;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 class StackReverseTest {
 
@@ -21,6 +24,6 @@ class StackReverseTest {
         expected.add(5);
         expected.add(10);
         expected.add(8);
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 }

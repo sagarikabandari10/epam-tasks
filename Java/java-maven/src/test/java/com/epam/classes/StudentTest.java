@@ -1,7 +1,7 @@
 package com.epam.classes;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class StudentTest {
         Assert.assertTrue(Student.getStudentsByYear(students, year).size() > 0);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void getStudentsByYearWithNullStudentParameter() {
         int year = 1986;
         Student.getStudentsByYear(null, year);
@@ -27,7 +27,7 @@ public class StudentTest {
         Assert.assertFalse(Student.getStudentsByYear(students, year).size() > 0);
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void getStudentsByYearThrowsException() {
         List<Student> students = Student.getStudents();
         int year = 123;

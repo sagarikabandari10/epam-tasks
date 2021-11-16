@@ -1,19 +1,19 @@
 package com.epam.fundamental;
 
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.testng.internal.junit.ArrayAsserts.assertArrayEquals;
 
-class OptionalTaskTwoTest {
+public class OptionalTaskTwoTest {
 
     @Test
     void createMatrix() {
         //setup
         int rows = 5, columns = 10, bound = 10;
         int[][] actual = OptionalTaskTwo.createMatrix(rows, columns, bound);
-        assertEquals(rows, actual.length);
-        assertEquals(columns, actual[0].length);
+        Assert.assertEquals(rows, actual.length);
+        Assert.assertEquals(columns, actual[0].length);
     }
 
     @Test
@@ -25,7 +25,7 @@ class OptionalTaskTwoTest {
 
         int actual = OptionalTaskTwo.getMaxValue(matrix);
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -37,7 +37,7 @@ class OptionalTaskTwoTest {
         int[][] actual = OptionalTaskTwo.replaceValue(matrix, oldValue, newValue);
 
         assertArrayEquals(expected, actual);
-        assertEquals(8, actual[0][0]);
-        assertEquals(8, actual[1][1]);
+        Assert.assertEquals(8, actual[0][0]);
+        Assert.assertEquals(8, actual[1][1]);
     }
 }

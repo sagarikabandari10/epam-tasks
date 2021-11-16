@@ -3,22 +3,22 @@ package com.epam.webdriver.page.pastebin;
 import com.epam.webdriver.driver.Browser;
 import com.epam.webdriver.page.pastebin.model.Expiration;
 import com.epam.webdriver.page.pastebin.model.Highlighting;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import org.openqa.selenium.WebDriver;
 
-class HomeTest {
+public class HomeTest {
     private static WebDriver driver;
 
-    @BeforeEach
+    @BeforeClass
     void setUp() {
         System.setProperty("browser", "chrome");
         driver = Browser.getDriver();
     }
 
-    @AfterEach
+    @AfterClass
     void tearDown() {
         Browser.tearDown();
     }

@@ -6,8 +6,8 @@ import com.epam.cleancode.airline.Military;
 import com.epam.cleancode.airline.Passenger;
 import com.epam.cleancode.models.ClassificationLevel;
 import com.epam.cleancode.models.MilitaryType;
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 import java.util.Arrays;
 import java.util.List;

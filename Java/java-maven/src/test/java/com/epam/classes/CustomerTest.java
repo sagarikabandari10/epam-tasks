@@ -1,7 +1,7 @@
 package com.epam.classes;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 public class CustomerTest {
 
@@ -17,7 +17,7 @@ public class CustomerTest {
         Assert.assertFalse(Customer.isCreditCardWithInRange(minRange, maxRange, creditCardNumber));
     }
 
-    @Test(expected = IllegalArgumentException.class)
+    @Test(expectedExceptions = IllegalArgumentException.class)
     public void isCreditCardWithInRangeMaxGreaterThanMinValue() {
         long minRange = 500, maxRange = 80, creditCardNumber = 100;
         Customer.isCreditCardWithInRange(minRange, maxRange, creditCardNumber);

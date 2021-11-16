@@ -1,17 +1,16 @@
 package com.epam.webdriver.page.google;
 
-import com.epam.webdriver.page.google.ProductCalculator;
 import com.epam.webdriver.driver.Browser;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
 
 public class ProductCalculatorTest {
     private ProductCalculator calculator;
 
-    @BeforeEach
+    @BeforeClass
     void setUp() {
         System.setProperty("browser", "edge");
         WebDriver driver = Browser.getDriver();
@@ -32,7 +31,7 @@ public class ProductCalculatorTest {
         Assert.assertTrue(totalCost.contains(emailTotalCost));
     }
 
-    @AfterEach
+    @AfterClass
     void tearDown() {
         Browser.tearDown();
     }

@@ -1,8 +1,7 @@
 package com.epam.collections.optional;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 class RearrangeDigitsTest {
 
@@ -11,7 +10,6 @@ class RearrangeDigitsTest {
         int[] actual = {-1, 2, -3, -4, 4, 9};
         RearrangeDigits.swapDigitsWithoutTemp(actual);
         int[] expected = {2, 4, 9,-4, -1, -3};
-        assertArrayEquals(expected, actual);
-
+        Assert.assertEquals(expected, actual);
     }
 }

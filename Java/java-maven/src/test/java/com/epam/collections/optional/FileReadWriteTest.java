@@ -1,8 +1,7 @@
 package com.epam.collections.optional;
 
-import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
 class FileReadWriteTest {
 
@@ -10,13 +9,13 @@ class FileReadWriteTest {
     void getReverseString() {
         String string = "Ravi";
         String actual = FileReadWrite.getReverseString(string);
-        assertEquals("ivaR", actual);
+        Assert.assertEquals("ivaR", actual);
     }
 
     @Test
     void getReverseStringWithNumbers() {
         String string = "1234";
         String actual = FileReadWrite.getReverseString(string);
-        assertEquals("4321", actual);
+        Assert.assertEquals("4321", actual);
     }
 }

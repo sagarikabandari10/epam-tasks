@@ -1,11 +1,9 @@
 package com.epam.fundamental;
 
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-class MainTaskTest {
+public class MainTaskTest {
 
     @Test
     void greetingUser() {
@@ -13,7 +11,7 @@ class MainTaskTest {
         String expected = "Welcome " + value;
         String actual = MainTask.greetingUser(value);
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -22,7 +20,7 @@ class MainTaskTest {
         String expected = "tnirp olleh omeD tseT";
         String actual = MainTask.reverse(value);
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -31,7 +29,7 @@ class MainTaskTest {
         int[] actual = MainTask.randomNumbers(value);
 
         for (int i : actual) {
-            assertTrue(i < 10);
+            Assert.assertTrue(i < 10);
         }
     }
 
@@ -41,7 +39,7 @@ class MainTaskTest {
         int expected = 15;
         int actual = MainTask.sumOfNumbers(value);
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -50,7 +48,7 @@ class MainTaskTest {
         int expected = 10;
         int actual = MainTask.tryParse(value);
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -59,7 +57,7 @@ class MainTaskTest {
         int expected = -1;
         int actual = MainTask.tryParse(value);
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
@@ -68,6 +66,6 @@ class MainTaskTest {
         String expected = "July";
         String actual = MainTask.getMonthName(value);
 
-        assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 }
